@@ -1,0 +1,26 @@
+{
+    "name": "@budarin/logging-proxy",
+    "version": "1.0.0",
+    "author": "Vadim Budarin",
+    "description": "Logging proxy for services",
+    "keywords": [
+        "logging",
+        "proxy",
+        "services"
+    ],
+    "type": "module",
+    "main": "dist/index.js",
+    "license": "MIT",
+    "dependencies": {
+        "prettier": "^3.6.2",
+        "typescript": "^5.9.3"
+    },
+    "scripts": {
+        "build": "tsc",
+        "type-check": "tsc --noEmit",
+        "pnpm-install": "pnpm install",
+        "upgrade-dependencies": "pnpm upgrade -i",
+        "publish-package": "pnpm build && pnpm publish --access=public"
+    },
+    "packageManager": "pnpm@10.16.1"
+}
