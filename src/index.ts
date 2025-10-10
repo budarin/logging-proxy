@@ -1,12 +1,9 @@
-type LoggerLevel = 'error' | 'fatal' | 'warn' | 'info' | 'debug' | 'trace';
-
 export interface Logger {
     info: (...data: unknown[]) => void;
     warn: (...data: unknown[]) => void;
     error: (...data: unknown[]) => void;
     debug: (...data: unknown[]) => void;
-    child: (binding: Record<string, string>) => Logger;
-    setLevel(level: LoggerLevel): void;
+    [key: string]: unknown;
 }
 
 export function createLoggingProxy<T extends object>(
