@@ -1,10 +1,9 @@
-export interface Logger {
+export type Logger = {
     info: (...data: unknown[]) => void;
     warn: (...data: unknown[]) => void;
     error: (...data: unknown[]) => void;
     debug: (...data: unknown[]) => void;
-    [key: string]: unknown;
-}
+} & Record<string, any>;
 
 export function createLoggingProxy<T extends object>(
     target: T,
