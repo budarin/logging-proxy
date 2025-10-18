@@ -15,10 +15,12 @@ export function createLoggingProxy<T extends object>(
 
             if (typeof orig === 'function') {
                 return function (...args: unknown[]) {
+                    const result = orig.apply(targetObj, args) as unknown;
                     logger.debug(
-                        `${String(prop)}${JSON.stringify(args).replace('[', '(').replace(']', ')')}`
+                        `${String(prop)}${JSON.stringify(args).replace('[', '(').replace(']', ')')} => ${JSON.stringify(result)}    `
                     );
-                    return orig.apply(targetObj, args) as unknown;
+
+                    return result;
                 };
             }
             return orig;
