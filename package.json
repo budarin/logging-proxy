@@ -1,6 +1,6 @@
 {
     "name": "@budarin/logging-proxy",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "author": "Vadim Budarin",
     "description": "Logging proxy for services",
     "keywords": [
